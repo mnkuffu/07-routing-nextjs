@@ -1,11 +1,16 @@
 import Link from "next/link";
 import css from "./SidebarNotes.module.css";
 
-const tags = ["All", "Todo", "Work", "Personal", "Meeting", "Shopping"];
+const tags = ["Todo", "Work", "Personal", "Meeting", "Shopping"];
 
 const Sidebar = () => {
   return (
     <ul className={css.menuList}>
+      <li>
+        <Link className={css.menuLink} href={`/notes/filter/all`}>
+            All
+          </Link>
+      </li>
       {tags.map((item) => (
         <li className={css.menuItem} key={item}>
           <Link className={css.menuLink} href={`/notes/filter/${item}`}>
